@@ -49,7 +49,7 @@ function Portfolio() {
       title: "Academia - Course Management System",
       description: "Full-stack web application built during Meraki Bootcamp",
       tech: ["React.js", "Node.js", "Express", "MongoDB", "Redux"],
-      link: "#",
+      link: "https://e-learning-acad.netlify.app/",
     },
   ];
   return (
@@ -228,7 +228,24 @@ function Portfolio() {
                 </div>
               </div>
             </div>
-
+            <div className="rounded-md bg-gray-800/50 border-gray-700 hover:border-purple-500/50 transition-all duration-300 transform hover:scale-105">
+              <div className="p-6">
+                <div className="flex items-start gap-4">
+                  <GraduationCap className="w-8 h-8 text-purple-400 flex-shrink-0" />
+                  <div>
+                    <h3 className="text-lg font-bold text-purple-400 mb-2">
+                      Beprogrammer
+                    </h3>
+                    <p className="text-gray-300 mb-2">Web using php</p>
+                    <p className="text-sm text-gray-400 mb-2">2020 - 2021</p>
+                    <p className="text-gray-400 text-sm">
+                      Cmpleted the full requirements of the WEB using php
+                      couurse 108 hours
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div className="rounded-md bg-gray-800/50 border-gray-700 hover:border-blue-500/50 transition-all duration-300 transform hover:scale-105">
               <div className="p-6">
                 <div className="flex items-start gap-4">
@@ -240,7 +257,7 @@ function Portfolio() {
                     <p className="text-gray-300 mb-2">
                       Bachelor of Software Engineering
                     </p>
-                    <p className="text-sm text-gray-400 mb-2">2023 - 2024</p>
+                    <p className="text-sm text-gray-400 mb-2">2019 - 2024</p>
                     <p className="bg-yellow-600 py-1 px-2 rounded-md text-sm text-yellow-100">
                       Teachers' Scholarship Award
                     </p>
@@ -262,7 +279,7 @@ function Portfolio() {
             {projects.map((project, index) => (
               <div
                 key={index}
-                className="bg-gray-800/50 border-gray-700 hover:border-green-500/50 transition-all duration-300 transform hover:scale-105"
+                className="bg-gray-800/50 border-gray-700 hover:border-green-500/50 transition-all duration-300 transform hover:scale-105 my-8"
               >
                 <div className="p-8">
                   <div className="flex items-start justify-between gap-4">
@@ -284,9 +301,15 @@ function Portfolio() {
                         ))}
                       </div>
                     </div>
-                    <button className="py-2 px-3 rounded-md   bg-green-600 hover:bg-green-700">
-                      <ExternalLink className="w-4 h-4" />
-                    </button>
+                    <a
+                      href="https://e-learning-acad.netlify.app/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <button className="py-2 px-3 rounded-md   bg-green-600 hover:bg-green-700">
+                        <ExternalLink className="w-4 h-4" />
+                      </button>
+                    </a>
                   </div>
                 </div>
               </div>
