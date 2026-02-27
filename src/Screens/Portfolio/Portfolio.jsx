@@ -21,10 +21,10 @@ function Portfolio() {
   }, []);
 
   const skills = [
-    { name: "React & React Native", level: 95 },
-    { name: "TypeScript/JavaScript", level: 90 },
+    { name: "React js", level: 95 },
+    { name: "TypeScript / JavaScript", level: 90 },
     { name: "Node.js & Express", level: 85 },
-    { name: "Mobile Banking Apps", level: 92 },
+    { name: "Website development", level: 92 },
     { name: "MongoDB & PostgreSQL", level: 80 },
     { name: "Git & GitHub", level: 88 },
   ];
@@ -35,10 +35,11 @@ function Portfolio() {
       company: "Professional for Smart Technology",
       period: "2024 - present",
       description:
-        "Developed customer-facing mobile banking application for Nova Bank",
+        "Developed customer-facing website banking for Nova Bank",
       achievements: [
         "Wallet services (Cliq top-ups, eFawateercom bill payments)",
         "Fund transfers (same-bank, domestic, and international)",
+        "Cheque management (cheque book creation and stop-cheque requests)",
         "Core banking features with financial product management",
       ],
     },
@@ -80,8 +81,8 @@ function Portfolio() {
                 SOFTWARE DEVELOPER
               </p>
               <p className="text-lg text-gray-400 max-w-2xl mx-auto animate-fade-in animation-delay-500">
-                Android & React Native Developer specializing in mobile banking
-                and financial applications. Skilled in front-end development,
+                Full stack MERN | PERN Developer worked with banking systems
+                and financial websites. Skilled in front-end development,
                 cross-platform solutions, and delivering secure, user-centric
                 banking experiences.
               </p>
@@ -99,10 +100,10 @@ function Portfolio() {
               <div className="flex flex-wrap justify-center items-center gap-4 mb-8">
                 <Phone className="w-7 h-7 text-white-600" />
                 <a
-                  href="tel:+962777396184"
+                  href="tel:+971558551075"
                   className="border border-purple-500 text-purple-400 px-4 py-2 rounded-md hover:bg-purple-500 hover:text-white transform hover:scale-105 transition-all duration-200"
                 >
-                  +962777396184
+                  +971558551075
                 </a>
               </div>
             </div>
