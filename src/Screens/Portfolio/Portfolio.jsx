@@ -10,12 +10,13 @@ import {
   GraduationCap,
   Languages,
   Award,
-  ExternalLink,
   Menu,
   X,
   Rocket,
   Smartphone,
   ArrowUpRight,
+  Download,
+  Globe,
 } from "lucide-react";
 
 // ---------------------------------------------------------------------------
@@ -56,7 +57,7 @@ const EXPERIENCES = [
     ],
   },
   {
-    title: "Associate Software Developer",
+    title: "Software Developer",
     company: "Professional for Smart Technology",
     period: "2024 — present",
     description: "Developed customer-facing banking software for Nova Bank.",
@@ -97,12 +98,33 @@ const EDUCATION = [
   },
 ];
 
+const APK_RELEASE_BASE =
+  "https://github.com/RafatBSaqqa/NativeKit-Studio-Releases/releases/download/v1.0.1";
+
 const PROJECTS = [
   {
-    title: "Academia — Course Management System",
-    description: "Full-stack e-learning platform built during Meraki Bootcamp.",
-    tech: ["React.js", "Node.js", "Express", "MongoDB", "Redux"],
-    link: "https://e-learning-acad.netlify.app/",
+    title: "Plates — Food Delivery",
+    description:
+      "React Native / Expo food delivery template with live cart, checkout, and order tracking flows — built for NativeKit Studio.",
+    tech: ["React Native", "Expo", "TypeScript"],
+    demoUrl: "https://plates-app.netlify.app/home",
+    apkUrl: `${APK_RELEASE_BASE}/plates.apk`,
+  },
+  {
+    title: "Coinly — Crypto Wallet",
+    description:
+      "React Native / Expo crypto wallet template with onboarding, portfolio tracking, and transaction UI — built for NativeKit Studio.",
+    tech: ["React Native", "Expo", "TypeScript"],
+    demoUrl: "https://coinly-app.netlify.app/onboarding",
+    apkUrl: `${APK_RELEASE_BASE}/Coinly.apk`,
+  },
+  {
+    title: "Nestly — Real Estate",
+    description:
+      "React Native / Expo real estate listings template with search, filters, and property detail screens — built for NativeKit Studio.",
+    tech: ["React Native", "Expo", "TypeScript"],
+    demoUrl: "https://nestly-realestate-app.netlify.app/onboarding",
+    apkUrl: `${APK_RELEASE_BASE}/Nestly.apk`,
   },
 ];
 
@@ -509,32 +531,38 @@ function Portfolio() {
             {PROJECTS.map((project, index) => (
               <Reveal key={index} delay={index * 80}>
                 <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-7 hover:border-emerald-500/40 transition-colors">
-                  <div className="flex items-start justify-between gap-4">
-                    <div className="flex-1">
-                      <h3 className="text-lg font-bold text-emerald-400 mb-2">
-                        {project.title}
-                      </h3>
-                      <p className="text-gray-400 text-sm mb-4">
-                        {project.description}
-                      </p>
-                      <div className="flex flex-wrap gap-2">
-                        {project.tech.map((tech, i) => (
-                          <span
-                            key={i}
-                            className="text-xs font-medium rounded-full border border-emerald-500/30 text-emerald-300 px-3 py-1"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
+                  <h3 className="text-lg font-bold text-emerald-400 mb-2">
+                    {project.title}
+                  </h3>
+                  <p className="text-gray-400 text-sm mb-4">
+                    {project.description}
+                  </p>
+                  <div className="flex flex-wrap gap-2 mb-5">
+                    {project.tech.map((tech, i) => (
+                      <span
+                        key={i}
+                        className="text-xs font-medium rounded-full border border-emerald-500/30 text-emerald-300 px-3 py-1"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="flex flex-wrap gap-3">
                     <a
-                      href={project.link}
+                      href={project.demoUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-10 h-10 rounded-full bg-emerald-500/15 border border-emerald-500/30 grid place-items-center hover:bg-emerald-500/25 transition-colors flex-shrink-0"
+                      className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs font-semibold text-gray-200 hover:bg-white/10 transition-colors"
                     >
-                      <ExternalLink className="w-4 h-4 text-emerald-300" />
+                      <Globe className="w-4 h-4" />
+                      View Website
+                    </a>
+                    <a
+                      href={project.apkUrl}
+                      className="inline-flex items-center gap-2 rounded-full bg-emerald-500/15 border border-emerald-500/30 px-4 py-2 text-xs font-semibold text-emerald-300 hover:bg-emerald-500/25 transition-colors"
+                    >
+                      <Download className="w-4 h-4" />
+                      Download APK
                     </a>
                   </div>
                 </div>
