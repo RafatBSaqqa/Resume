@@ -2,4 +2,99 @@
 @tailwind components;
 @tailwind utilities;
 
- 
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Skill bars animate to their target width once mounted */
+@keyframes fillBar {
+  from {
+    width: 0%;
+  }
+  to {
+    width: var(--skill-level, 0%);
+  }
+}
+.skill-bar {
+  width: var(--skill-level, 0%);
+  animation: fillBar 1.1s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Ambient gradient blobs used behind the page content */
+.mesh-blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(90px);
+  opacity: 0.35;
+  animation: float 16s ease-in-out infinite;
+}
+.mesh-blob-1 {
+  top: -10%;
+  left: -10%;
+  width: 40vw;
+  height: 40vw;
+  background: radial-gradient(circle, #3b82f6, transparent 70%);
+  animation-delay: 0s;
+}
+.mesh-blob-2 {
+  top: 30%;
+  right: -15%;
+  width: 45vw;
+  height: 45vw;
+  background: radial-gradient(circle, #a855f7, transparent 70%);
+  animation-delay: -5s;
+}
+.mesh-blob-3 {
+  bottom: -15%;
+  left: 20%;
+  width: 35vw;
+  height: 35vw;
+  background: radial-gradient(circle, #ec4899, transparent 70%);
+  animation-delay: -10s;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(3%, 5%) scale(1.05);
+  }
+  66% {
+    transform: translate(-4%, -3%) scale(0.97);
+  }
+}
+
+/* Slim, on-brand scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #05060f;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #3b82f6, #a855f7);
+  border-radius: 9999px;
+  border: 2px solid #05060f;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mesh-blob,
+  .reveal,
+  .skill-bar {
+    animation: none !important;
+    transition: none !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
